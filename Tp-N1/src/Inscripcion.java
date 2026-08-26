@@ -39,4 +39,10 @@ public class Inscripcion {
     public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
     }
+    public String getEstado(String estado){
+        return estado;
+    }
+    public void setEstado(String estado){
+        this.estado=estado;
+    }
 }
