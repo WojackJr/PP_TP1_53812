@@ -98,4 +98,10 @@ public class EventoUniversitario {
         Actividad nuevaActividad=new Actividad(id,titulo,cupo);
         this.actividades.add(nuevaActividad);
     }
+    //mostrar datos de la actividad creada
+    public void mostrarDatosActividad(){
+        for (Actividad k : this.actividades){
+            System.out.println("------------------------------\n"+"Nombre Actividad: "+k.getTitulo()+"\nID: "+k.getId()+"\nCantidad de cupos: "+k.getCupoMaximo());
+        }
+    }
 }
