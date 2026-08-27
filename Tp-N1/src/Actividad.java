@@ -7,7 +7,7 @@ public class Actividad {
     private int cupoMaximo;
     public static final int cupoMinimo = 0;
     //relacion 0 a muchos con estudiante para inscripcion
-    private List<Inscripcion> inscripcion;
+    private List<Inscripcion> inscripcion=new ArrayList<>();
     //constructores
 
     public Actividad(int id, String titulo, int cupoMaximo) {
@@ -15,7 +15,7 @@ public class Actividad {
         this.titulo = titulo;
         this.cupoMaximo = cupoMaximo;
         //array de la asociacion inscripcion
-        this.inscripcion=new ArrayList<>();
+        this.inscripcion=inscripcion;
     }
 
     //getter and setter
@@ -44,14 +44,13 @@ public class Actividad {
     }
     //metodos
     public Inscripcion inscribir (Estudiante estudiante){
-        Inscripcion nuevaInscripcion=new Inscripcion(LocalDate.now(), "Inscripto", this, estudiante);//pongo 'this' donde va la actividad para enviarse a si mismo.
+        Inscripcion nuevaInscripcion=new Inscripcion(LocalDate.now(), "Inscripto", this, estudiante);//pongo 'this' donde va la actividad para enviarse a si mismo. CREO QUE HABRIA QUE CAMBAIR ESE this PORQUE NO DEJARIA ELEGIR LA ACTIVIDAD.
         this.inscripcion.add(nuevaInscripcion);
         return nuevaInscripcion;
     }
     public void mostrarInscripciones(){
-        System.out.println("");
         for (Inscripcion i : this.inscripcion){
-            System.out.println("Inscripciones a actividad "+this+"\nEstudiante: "+i.getEstudiante().getNombre()+"Estado: "+i.getEstado() + "\nFecha: "+i.getFecha());
+            System.out.println("Inscripciones a actividad "+this+"\nEstudiante: "+i.getEstudiante().getNombre()+"Legajo: "+i.getEstudiante().getLegajo()+"Estado: "+i.getEstado() + "\nFecha: "+i.getFecha());
         }
     }
 }

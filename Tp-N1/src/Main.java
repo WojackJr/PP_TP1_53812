@@ -37,4 +37,5 @@ public class Main {
         System.out.println("Cantidad de eventos creados: "+EventoUniversitario.getCantEventos());
 // debo tambien contar la cantidad de eventos por la copia? i don't know
     }
+    //no hace falta pedir los datos por teclado para crear las actividades y las inscripciones)
 }

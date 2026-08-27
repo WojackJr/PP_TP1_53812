@@ -11,7 +11,7 @@ public class EventoUniversitario {
     private Sala sala;
     //cuando un elemento en el uml esta subrayado hace referencia a que el atributo es static
 //array para crear actividades
-    private List<Actividad> actividades=new ArrayList<>();
+    private List<Actividad> actividades; //como es una composicion con actiividad no ponog el 'new= ArrayList<>() ; solo va en el constructor
     //constructor
     public EventoUniversitario(String id, String titulo, double costoBase, boolean gratuito) {
         this.id = id;
