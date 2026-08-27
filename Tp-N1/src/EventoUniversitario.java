@@ -35,6 +35,14 @@ public class EventoUniversitario {
         this.actividades=new ArrayList<>();//agrego a la copia tambien
     }
     //getter and setter
+
+    public List<Actividad> getActividades() {//getter de actividades
+        return actividades;
+    }
+
+    public void setActividades(List<Actividad> actividades) {//setter de actividades
+        this.actividades = actividades;
+    }
     public String getId() {
         return id;
     }

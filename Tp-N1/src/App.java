@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class App {
+public class App {//este codigo crea un evento, a ese evento se crea un objeto actividad que es un array que a este por cada posicion de actividad se le crea un array que son las inscripciones que contienen los datos de los estudiantes
     public static void main(String[] args) {
         Scanner teclado=new Scanner(System.in);
         char respuesta;
@@ -28,10 +28,6 @@ public class App {
             System.out.println("Inicializador estatico: se cargo la clase EventoUniversitario.");
             EventoUniversitario evento =new EventoUniversitario(cont,nombre,costo,esGratuito);
 
-
-
-
-
             //crear sala
             Sala sala1=new Sala (1, "LISUN");
             Sala sala2=new Sala (2, "Laboratorio");
@@ -47,6 +43,10 @@ public class App {
                 case 1:
                     evento.asignarSala(sala1);
                     evento.crearActividad(1,"Hacking",50);
+                    evento.crearActividad(2,"Ciberseguridad",50);
+                    evento.getActividades().get(0).inscribir(estudiante1);//el numero dentro del get hace referencia al numero de actividad (el 0 es el primero que se creó en el bucle)
+                    evento.getActividades().get(0).inscribir(estudiante2);
+
                     break;
                 case 2:
                     evento.asignarSala(sala2);
@@ -57,6 +57,9 @@ public class App {
                     evento.crearActividad(3,"Choripaneada",60);
                     break;
             }//creo el switch para que en cada bucle le asigne una sala y actividad distinta al evento
+            //se asigna manualmente alumnos a esa actividad de ese evento especifico
+
+
             EventoUniversitario copiaEvento=new EventoUniversitario(evento); //la copia va al final asi agarra todos los atributos que le asigne a la original
             evento.mostrarDatos();
             copiaEvento.mostrarDatos();
