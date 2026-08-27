@@ -14,8 +14,6 @@ public class Actividad {
         this.id = id;
         this.titulo = titulo;
         this.cupoMaximo = cupoMaximo;
-        //array de la asociacion inscripcion
-        this.inscripcion=inscripcion;
     }
 
     //getter and setter
@@ -50,7 +48,7 @@ public class Actividad {
     }
     public void mostrarInscripciones(){
         for (Inscripcion i : this.inscripcion){
-            System.out.println("Inscripciones a actividad "+this+"\nEstudiante: "+i.getEstudiante().getNombre()+"Legajo: "+i.getEstudiante().getLegajo()+"Estado: "+i.getEstado() + "\nFecha: "+i.getFecha());
+            System.out.println("Inscripciones a actividad "+this.titulo+"\nEstudiante: "+i.getEstudiante().getNombre()+"Legajo: "+i.getEstudiante().getLegajo()+"Estado: "+i.getEstado() + "\nFecha: "+i.getFecha());
         }
     }
 }

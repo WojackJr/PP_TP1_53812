@@ -32,6 +32,7 @@ public class EventoUniversitario {
         this.costoBase = otro.costoBase;
         this.gratuito = otro.gratuito;
         cantEventos++;
+        this.actividades=new ArrayList<>();//agrego a la copia tambien
     }
     //getter and setter
     public String getId() {
@@ -80,7 +81,10 @@ public class EventoUniversitario {
 
     public void mostrarDatos(){
         //evento original
-        System.out.println("\n=====================" + "\nID: EVT-"+id + "\nTítulo: "+titulo);
+        System.out.println("\n=====================" + "\nID: EVT-"+id + "\nTítulo: "+titulo/*ahora concateno para mostrar la informacion de sala y las inscrpociones*/+"\nSala: "+this.sala.getNombre());
+        for (Actividad actividad:this.actividades){//para mostrar las actividades del evento debo acceder al array actividades y dentro de la actividad entrar al array inscripciones llamando al metodo mostrarInscripciones() que esta enla clase Actividad
+            actividad.mostrarInscripciones();
+        };
         if(!gratuito){
             System.out.println("Costo: "+calcularCostoEstimado());
         }
