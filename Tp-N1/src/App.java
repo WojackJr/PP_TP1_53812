@@ -42,25 +42,41 @@ public class App {//este codigo crea un evento, a ese evento se crea un objeto a
             switch (i){
                 case 1:
                     evento.asignarSala(sala1);
-                    evento.crearActividad(1,"Hacking",50);
-                    evento.crearActividad(2,"Ciberseguridad",50);
+                    evento.crearActividad(0,"Hacking",50);
+                    evento.crearActividad(1,"Ciberseguridad",50);
+                    //se asigna manualmente alumnos a esa actividad de ese evento especifico
                     evento.getActividades().get(0).inscribir(estudiante1);//el numero dentro del get hace referencia al numero de actividad (el 0 es el primero que se creó en el bucle)
-                    evento.getActividades().get(0).inscribir(estudiante2);
-
+                    evento.getActividades().get(1).inscribir(estudiante2);
+                    evento.getActividades().get(0).inscribir(estudiante3);
                     break;
                 case 2:
                     evento.asignarSala(sala2);
-                    evento.crearActividad(2,"Examinacion de sustancias",30);
+                    evento.crearActividad(0,"Examinacion de sustancias",30);
+                    evento.crearActividad(1,"Destilado de liquidos",30);
+                    evento.getActividades().get(1).inscribir(estudiante1);
+                    evento.getActividades().get(0).inscribir(estudiante2);
+                    evento.getActividades().get(0).inscribir(estudiante3);
                     break;
                 case 3:
                     evento.asignarSala(sala3);
-                    evento.crearActividad(3,"Choripaneada",60);
+                    evento.crearActividad(0,"Choripaneada",60);
+                    evento.crearActividad(1,"Torneo de Truco",32);
+                    evento.getActividades().get(0).inscribir(estudiante1);
+                    evento.getActividades().get(1).inscribir(estudiante2);
+                    evento.getActividades().get(1).inscribir(estudiante3);
                     break;
             }//creo el switch para que en cada bucle le asigne una sala y actividad distinta al evento
-            //se asigna manualmente alumnos a esa actividad de ese evento especifico
-
 
             EventoUniversitario copiaEvento=new EventoUniversitario(evento); //la copia va al final asi agarra todos los atributos que le asigne a la original
+            //se le asignan las salas a la copia
+            switch(i){
+                case 1: copiaEvento.asignarSala(sala1);
+                break;
+                case 2: copiaEvento.asignarSala(sala2);
+                break;
+                case 3: copiaEvento.asignarSala(sala3);
+                break;
+            }
             evento.mostrarDatos();
             copiaEvento.mostrarDatos();
 

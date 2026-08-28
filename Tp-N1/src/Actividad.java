@@ -48,7 +48,7 @@ public class Actividad {
     }
     public void mostrarInscripciones(){
         for (Inscripcion i : this.inscripcion){
-            System.out.println("Inscripciones a actividad "+this.titulo+"\nEstudiante: "+i.getEstudiante().getNombre()+"Legajo: "+i.getEstudiante().getLegajo()+"Estado: "+i.getEstado() + "\nFecha: "+i.getFecha());
+            System.out.println("----------------------"+"\nInscripciones a actividad "+this.titulo+"\nEstudiante: "+i.getEstudiante().getNombre()+" - Legajo: "+i.getEstudiante().getLegajo()+" - Estado: "+i.getEstado() + "\nFecha: "+i.getFecha());
         }
     }
 }
