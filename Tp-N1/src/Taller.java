@@ -2,8 +2,9 @@ public class Taller extends Actividad {
     //atributos
     private boolean requiereNotebook;
     //constructor
-    public Taller(int id, String titulo, int cupoMaximo) {
-        super(id, titulo, cupoMaximo);
+    public Taller(int id, String titulo, int cupoMaximo, boolean requiereNotebook) {
+        super(id, titulo, cupoMaximo);//usa el constructor de la calse Actividad
+        this.requiereNotebook=requiereNotebook;
     }
 //metodos
     @Override

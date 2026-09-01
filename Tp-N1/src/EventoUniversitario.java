@@ -77,14 +77,15 @@ public class EventoUniversitario {
 
 //metodos
     public double calcularCostoEstimado(){
-        double costoEstimado;
-        if (costoBase!=0){
-            costoEstimado=costoBase+costoBase*0.21;
+        if (gratuito){
+            return 0.0;
         }
-        else{
-            costoEstimado=0.0;
+        double costoTotalActividades = 0;
+
+        for(Actividad act : this.actividades){//recorremos las actividades para saber si es charla o taller, y devolvera un valor distinto
+            costoTotalActividades+=act.calcularCostoMateriales();
         }
-        return costoEstimado;
+        return (this.costoBase+costoTotalActividades)*1.21;
     }
 
     public void mostrarDatos(){
@@ -106,9 +107,16 @@ public class EventoUniversitario {
         this.sala=sala;
     }
     //metodo para crear actividad
-    public void crearActividad(int id, String titulo, int cupo){
-        //editar despues: Actividad nuevaActividad=new Actividad(id,titulo,cupo);
-        //this.actividades.add(nuevaActividad);
+    public void crearActividad(String tipo, int id, String titulo, int cupo, boolean notebook){
+        Actividad nuevaActividad=null;
+        if(tipo.equalsIgnoreCase("Charla")){//equalsIgnoreCase ignora si esta en mayusculkas o minusculas
+            nuevaActividad=new Charla(id, titulo, cupo);
+        } else if(tipo.equalsIgnoreCase("Taller")){
+            nuevaActividad=new Taller(id, titulo, cupo, notebook);
+        }
+        if(nuevaActividad!=null){
+            this.actividades.add(nuevaActividad);
+        }
     }
     //mostrar datos de la actividad creada
     public void mostrarDatosActividad(){
