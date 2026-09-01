@@ -42,18 +42,19 @@ public abstract class Actividad {
     }
     //metodos
     public Inscripcion inscribir (Estudiante estudiante){
-        Inscripcion nuevaInscripcion=new Inscripcion(LocalDate.now(), "Inscripto", this, estudiante);//pongo 'this' donde va la actividad para enviarse a si mismo. CREO QUE HABRIA QUE CAMBAIR ESE this PORQUE NO DEJARIA ELEGIR LA ACTIVIDAD.
+        Inscripcion nuevaInscripcion=new Inscripcion(LocalDate.now(), "Inscripto", this, estudiante);//pongo 'this' donde va la actividad para enviarse a si mismo.
         this.inscripcion.add(nuevaInscripcion);
         return nuevaInscripcion;
     }
     public void mostrarInscripciones(){
         for (Inscripcion i : this.inscripcion){
-            System.out.println("----------------------"+"\nInscripciones a actividad "+this.titulo+"\nEstudiante: "+i.getEstudiante().getNombre()+" - Legajo: "+i.getEstudiante().getLegajo()+" - Estado: "+i.getEstado() + "\nFecha: "+i.getFecha());
+            System.out.println("----------------------\n"+"Estudiante: "+i.getEstudiante().getNombre()+" - Legajo: "+i.getEstudiante().getLegajo()+" - Estado: "+i.getEstado() + "\nFecha: "+i.getFecha());
+            mostrarIdentificacion();
         }
     }
     //metodo final de la actividad 3
     final public void mostrarIdentificacion(){
-
+        System.out.println("Actividad ID: "+this.id+" | Tipo: "+getTipo()+" | Título: "+this.titulo);
     }
     //metodos para que hereden las subclases
     public abstract double calcularCostoMateriales();

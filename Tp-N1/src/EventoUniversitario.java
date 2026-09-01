@@ -90,12 +90,12 @@ public class EventoUniversitario {
 
     public void mostrarDatos(){
         //evento original
-        System.out.println("\n=====================" + "\nID: EVT-"+id + "\nTítulo: "+titulo/*ahora concateno para mostrar la informacion de sala y las inscrpociones*/+"\nSala: "+this.sala.getNombre());
+        System.out.println("\n=====================" + "\nID: EVT-"+id + "\nTítulo: "+titulo/*ahora concateno para mostrar la informacion de sala y las inscrpociones*/+"\nSala: "+this.sala.getNombre()+"\n----------------------"+"\nInscripciones:");
         for (Actividad actividad:this.actividades){//para mostrar las actividades del evento debo acceder al array actividades y dentro de la actividad entrar al array inscripciones llamando al metodo mostrarInscripciones() que esta enla clase Actividad
             actividad.mostrarInscripciones();
         };
         if(!gratuito){
-            System.out.println("Costo: "+calcularCostoEstimado());
+            System.out.println("Costo: $"+calcularCostoEstimado());
         }
         else{
             System.out.println("Es gratuito ");
