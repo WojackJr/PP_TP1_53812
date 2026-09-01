@@ -51,4 +51,8 @@ public class Actividad {
             System.out.println("----------------------"+"\nInscripciones a actividad "+this.titulo+"\nEstudiante: "+i.getEstudiante().getNombre()+" - Legajo: "+i.getEstudiante().getLegajo()+" - Estado: "+i.getEstado() + "\nFecha: "+i.getFecha());
         }
     }
+    //metodo final de la actividad 3
+    final public void mostrarIdentificacion(){
+
+    }
 }
