@@ -107,8 +107,8 @@ public class EventoUniversitario {
     }
     //metodo para crear actividad
     public void crearActividad(int id, String titulo, int cupo){
-        Actividad nuevaActividad=new Actividad(id,titulo,cupo);
-        this.actividades.add(nuevaActividad);
+        //editar despues: Actividad nuevaActividad=new Actividad(id,titulo,cupo);
+        //this.actividades.add(nuevaActividad);
     }
     //mostrar datos de la actividad creada
     public void mostrarDatosActividad(){

@@ -1,11 +1,11 @@
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
-public class Actividad {
+public abstract class Actividad {
     private int id;
     private String titulo;
     private int cupoMaximo;
-    public static final int cupoMinimo = 0;
+    public static final int cupoMinimo = 2;
     //relacion 0 a muchos con estudiante para inscripcion
     private List<Inscripcion> inscripcion=new ArrayList<>();
     //constructores
@@ -55,4 +55,7 @@ public class Actividad {
     final public void mostrarIdentificacion(){
 
     }
+    //metodos para que hereden las subclases
+    public abstract double calcularCostoMateriales();
+    public abstract String getTipo();
 }
