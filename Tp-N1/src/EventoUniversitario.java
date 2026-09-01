@@ -33,6 +33,11 @@ public class EventoUniversitario {
         this.gratuito = otro.gratuito;
         cantEventos++;
         this.actividades=new ArrayList<>();//agrego a la copia tambien
+        if (otro.actividades != null) {
+            for (Actividad act : otro.actividades) {
+                this.actividades.add(act);
+            }
+        }
     }
     //getter and setter
 
