@@ -8,11 +8,11 @@ public class Taller extends Actividad {
 //metodos
     @Override
     public double calcularCostoMateriales() {
-        return 0;
+        return requiereNotebook? 5000.0 : 2000.0;
     }
 
     @Override
     public String getTipo() {
-        return "";
+        return this.getClass().getSimpleName(); //aca voy a la clase y luego extraigo su nombre
     }
 }

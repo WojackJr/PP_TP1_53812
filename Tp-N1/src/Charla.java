@@ -7,11 +7,11 @@ public class Charla extends Actividad {
 
     @Override
     public double calcularCostoMateriales() {
-        return 0;
+        return 0.0;
     }
 
     @Override
     public String getTipo() {
-        return "";
+        return this.getClass().getSimpleName();
     }
 }
